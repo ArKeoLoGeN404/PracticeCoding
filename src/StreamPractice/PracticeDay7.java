@@ -1,0 +1,25 @@
+package StreamPractice;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class PracticeDay7 {
+
+
+    static void reverseArray(int[] array){
+
+        int[] reversedArray = IntStream
+                .rangeClosed(1, array.length)
+                .map(i -> array[array.length - i])
+                .toArray();
+
+        for (int i : reversedArray) {
+            System.out.println(i);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        reverseArray(new int[]{1, 2, 3, 4, 5});
+    }
+}
