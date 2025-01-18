@@ -51,6 +51,6 @@ public class PracticeDay1 {
     public static void main(String[] args) {
         filterOddEven();
 
-        
+        Function
     }
 }
