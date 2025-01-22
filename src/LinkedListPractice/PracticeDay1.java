@@ -17,6 +17,42 @@ public class PracticeDay1 {
         return temp;
     }
 
+    static Node deleteHead(Node head){
+
+        if (head == null || head.next == null)
+            return null;
+
+        Node temp = head;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+    }
+
+    static int countLength(Node head){
+
+        int count = 0;
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+
+    static boolean searchElement(Node head, int value){
+        Node temp = head;
+        while (temp.next != null){
+
+            if (temp.data == value)
+                return true;
+
+            temp = temp.next;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         List<Integer> nums = Arrays.asList(1, 2, 3, 4);
@@ -34,5 +70,13 @@ public class PracticeDay1 {
         Node newHead = insertHead(val, head);
 
         printLL(newHead);
+//        System.out.println("=============");
+//
+//        Node newHead2 = deleteHead(newHead);
+
+//        printLL(newHead2);
+        System.out.printf("length of the LL : %s", countLength(newHead));
+        System.out.println();
+        System.out.println(searchElement(newHead, 1001));
     }
 }
